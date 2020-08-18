@@ -283,7 +283,7 @@ fn path_to_cstring(p: &Path) -> Result<CString> {
 }
 
 /// Name for a database within a SQLite connection.
-#[derive(Copy, Clone, Debug, PartialEq, Eq, Hash)]
+#[derive(Copy, Clone, Debug)]
 pub enum DatabaseName<'a> {
     /// The main database.
     Main,
@@ -301,7 +301,6 @@ pub enum DatabaseName<'a> {
     feature = "backup",
     feature = "blob",
     feature = "session",
-    feature = "deserialize",
     feature = "modern_sqlite"
 ))]
 impl DatabaseName<'_> {
