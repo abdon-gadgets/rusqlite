@@ -33,6 +33,7 @@ session = ["preupdate_hook", "buildtime_bindgen"]
 in_gecko = []
 with-asan = []
 wasm32-wasi-vfs = []
+deserialize = []
 
 [build-dependencies]
 bindgen = { version = "0.55", optional = true, default-features = false, features = ["runtime"] }

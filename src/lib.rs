@@ -98,6 +98,8 @@ mod column;
 pub mod config;
 #[cfg(any(feature = "functions", feature = "vtab"))]
 mod context;
+#[cfg(any(feature = "deserialize"))]
+pub mod deserialize;
 #[cfg(feature = "functions")]
 pub mod functions;
 #[cfg(feature = "hooks")]
@@ -275,7 +277,7 @@ fn path_to_cstring(p: &Path) -> Result<CString> {
 }
 
 /// Name for a database within a SQLite connection.
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, Debug)]
 pub enum DatabaseName<'a> {
     /// The main database.
     Main,
